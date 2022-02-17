@@ -11,4 +11,6 @@ os.system("systemctl restart postgresql")
 os.system("sudo systemctl restart postgresql")
 os.system("systemctl enable postgresql")
 os.system("sudo systemctl enable postgresql")
+
 os.system("sudo cp -r run-as-gvm.py /opt/gvm")
+os.system("mkdir /opt/gvm/src")
