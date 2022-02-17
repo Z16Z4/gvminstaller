@@ -1,7 +1,6 @@
 #!/usr/bin/env python3 
 #RUN AS SUDO SU - GVM
 
-from ensurepip import version
 import os 
 os.system("mkdir /opt/gvm/src")
 
