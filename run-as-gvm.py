@@ -29,5 +29,5 @@ get_package(url, "openvas-smb", "v21.4.0")
 
 
 
-os.system("cp -r /tmp/gvm-source/ /opt/gvm/src")
+
 
