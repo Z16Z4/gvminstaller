@@ -5,6 +5,7 @@
 
 import os 
 os.system("sudo apt-get update;sudo apt-get upgrade; sudo apt update; sudo apt upgrade")
+os.system("sudo apt install unzip")
 #Update system
 os.system("sudo curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -")
 os.system('''sudo echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list''')
