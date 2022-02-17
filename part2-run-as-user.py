@@ -13,4 +13,4 @@ os.system("systemctl enable postgresql")
 os.system("sudo systemctl enable postgresql")
 
 os.system("sudo cp -r part3-run-as-gvm.py /opt/gvm")
-os.system("mkdir /opt/gvm/src")
+os.system("sudo mkdir /opt/gvm/src")
