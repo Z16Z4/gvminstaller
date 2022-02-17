@@ -11,8 +11,6 @@ def get_package(url, filename, version):
     os.system("mv *21* " + filename)
 
 
-
-os.system("mkdir /tmp/gvm-source")
 os.chdir("/tmp/gvm-source")
 
 
