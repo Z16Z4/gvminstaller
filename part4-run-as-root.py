@@ -38,5 +38,5 @@ os.system("make install")
 
 
 #Configuration of Openvas and redis server
-os.system("cp /tmp/gvm-source/openvas-scanner/config/redis-openvas.conf /etc/redis")
+os.system("cp /tmp/gvm-source/openvas/config/redis-openvas.conf /etc/redis")
 os.system("chown redis:redis /etc/redis/redis-openvas.conf")
