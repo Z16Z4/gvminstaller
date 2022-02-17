@@ -24,11 +24,13 @@ os.system("make install")
 
 
 #MAKE OPENVAS 
-os.chdir("/tmp/gvm-source/openvas-scanner")
+os.chdir("/tmp/gvm-source/")
+os.system("mv openvas-scanner/ openvas")
+os.chdir("openvas")
 os.system("export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH")
 os.system("mkdir build")
 os.chdir("build")
-os.system("sed -i 's/set (CMAKE_C_FLAGS_DEBUG\s.*\"\${​​​CMAKE_C_FLAGS_DEBUG}​​​​​​​​​​ \${​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​COVERAGE_FLAGS}​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​\")/set (CMAKE_C_FLAGS_DEBUG \"\${​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​CMAKE_C_FLAGS_DEBUG}​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ -Werror -Wno-error=deprecated-declarations\")/g' ../../openvas-scanner/CMakeLists.txt")
+os.system("sed -i 's/set (CMAKE_C_FLAGS_DEBUG\s.*\"\${​​​CMAKE_C_FLAGS_DEBUG}​​​​​​​​​​ \${​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​COVERAGE_FLAGS}​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​\")/set (CMAKE_C_FLAGS_DEBUG \"\${​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​CMAKE_C_FLAGS_DEBUG}​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ -Werror -Wno-error=deprecated-declarations\")/g' ../../openvas/CMakeLists.txt")
 os.system("cmake .. -DCMAKE_INSTALL_PREFIX=/opt/gvm -DCMAKE_BUILD_TYPE=RELEASE")
 os.system("make")
 os.system("make doc")
