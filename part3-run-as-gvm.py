@@ -2,7 +2,7 @@
 #RUN AS SUDO SU - GVM
 
 import os 
-
+os.system("bash")
 url = 'https://github.com/greenbone/'
 def get_package(url, filename, version):
     os.system("wget " + url + filename + "/archive/refs/tags/" + version + ".zip")
