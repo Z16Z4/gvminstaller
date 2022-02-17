@@ -2,7 +2,6 @@
 #RUN AS SUDO SU - GVM
 
 import os 
-os.system("mkdir /opt/gvm/src")
 
 url = 'https://github.com/greenbone/'
 def get_package(url, filename, version):
