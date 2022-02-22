@@ -4,6 +4,7 @@
 import os 
 #MAKE GVM LIBS
 os.chdir("/tmp/gvm-source/gvm-libs")
+os.system("mkdir build")
 os.chdir("build")
 os.system("cmake .. -DCMAKE_INSTALL_PREFIX=/opt/gvm -DCMAKE_BUILD_TYPE=RELEASE")
 os.system("make")
@@ -12,6 +13,7 @@ os.system("make install")
 
 #MAKE OPENVAS-SMB
 os.chdir("/tmp/gvm-source/openvas-smb")
+os.system("mkdir build")
 os.chdir("build")
 os.system("cmake .. -DCMAKE_INSTALL_PREFIX=/opt/gvm -DCMAKE_BUILD_TYPE=RELEASE")
 os.system("make")
@@ -23,6 +25,7 @@ os.system("make install")
 os.chdir("/tmp/gvm-source/")
 os.system("mv openvas-scanner/ openvas")
 os.chdir("openvas")
+os.system("mkdir build")
 os.chdir("build")
 os.system("cmake .. -DCMAKE_INSTALL_PREFIX=/opt/gvm -DCMAKE_BUILD_TYPE=RELEASE")
 os.system("make")
