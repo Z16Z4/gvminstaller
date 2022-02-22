@@ -1,7 +1,7 @@
 #!/usr/bin/env python3 
 #run as root part 4
+import os
 os.system("bash ./part4-set-export.sh")
-import os 
 #MAKE GVM LIBS
 os.chdir("/tmp/gvm-source/gvm-libs")
 os.system("mkdir build")
