@@ -1,0 +1,19 @@
+[Unit]
+Description=Control the OpenVAS service
+After=redis.service
+After=postgresql.service
+ 
+[Service]
+ExecStartPre=-rm /opt/gvm/var/run/ospd-openvas.pid /opt/gvm/var/run/ospd.sock /opt/gvm/var/run/gvmd.sock
+Type=simple
+User=gvm
+Group=gvm
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/gvm/bin:/opt/gvm/sbin:/opt/gvm/.local/bin
+ 
+Environment=PYTHONPATH=/opt/gvm/lib/python3.8/site-packages
+ 
+ExecStart=/usr/bin/python3 /opt/gvm/bin/ospd-openvas --pid-file /opt/gvm/var/run/ospd-openvas.pid --log-file /opt/gvm/var/log/gvm/ospd-openvas.log --lock-file-dir /opt/gvm/var/run -u /opt/gvm/var/run/ospd.sock
+RemainAfterExit=yes
+ 
+[Install]
+WantedBy=multi-user.target
