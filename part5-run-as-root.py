@@ -61,6 +61,7 @@ os.system("cp /tmp/gvm-source/openvas/config/redis-openvas.conf /etc/redis")
 os.system("chown redis:redis /etc/redis/redis-openvas.conf")
  
 os.system("sudo ldconfig")
+os.system("touch /opt/gvm/etc/openvas/openvas.conf")
 os.system("echo 'db_address = /run/redis-openvas/redis.sock' > /etc/openvas/openvas.conf")
 os.system("chown gvm:gvm /opt/gvm/etc/openvas/openvas.conf")
 os.system("usermod -aG redis gvm")
