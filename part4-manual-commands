@@ -1,6 +1,6 @@
 export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH
 sudo mkdir -p /opt/gvm/lib/python3.8/site-packages/
 export PYTHONPATH=/opt/gvm/lib/python3.8/site-packages
-echo "export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH >> ~/.bashrc"
+echo "export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH" >> ~/.bashrc
 echo "export PYTHONPATH=/opt/gvm/lib/python3.8/site-packages" >> ~/.bashrc
 bash
