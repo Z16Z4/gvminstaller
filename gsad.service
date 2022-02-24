@@ -1,0 +1,17 @@
+[Unit]
+Description=Control the OpenVAS GSA service
+After=network.target networking.service gvmd.service
+Wants=gvmd.service
+ 
+[Service]
+Type=forking
+User=gvm
+Group=gvm
+PIDFile=/opt/gvm/var/run/gsad.pid
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/gvm/bin:/opt/gvm/sbin:/opt/gvm/.local/bin
+Environment=PYTHONPATH=/opt/gvm/lib/python3.8/site-packages
+ExecStart=/usr/bin/sudo /opt/gvm/sbin/gsad --mlisten=0.0.0.0 --mport=9392
+RemainAfterExit=yes
+ 
+[Install]
+WantedBy=multi-user.target
