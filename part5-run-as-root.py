@@ -56,10 +56,18 @@ os.chdir("/tmp/gvm-source/ospd")
 os.system("pip3 install . --prefix=/opt/gvm")
 
 
-#Configuration of Openvas and redis server
+#configuration
 os.system("cp /tmp/gvm-source/openvas/config/redis-openvas.conf /etc/redis")
 os.system("chown redis:redis /etc/redis/redis-openvas.conf")
+ 
+os.system("sudo ldconfig")
+os.system("echo 'db_address = /run/redis-openvas/redis.sock' > /etc/openvas/openvas.conf")
+os.system("chown gvm:gvm /opt/gvm/etc/openvas/openvas.conf")
+os.system("usermod -aG redis gvm")
+#start redis
+os.system("systemctl start redis-server@openvas")
+os.system("systemctl enable redis-server@openvas")
+os.system("echo 'net.core.somaxconn = 1024' >> /etc/sysctl.conf")
+os.system("echo 'vm.overcommit_memory = 1' >> /etc/sysctl.conf")
+os.system("sysctl -p")
 
-#Ldconfig
-
-os.system("sudo ldconfig; ")
