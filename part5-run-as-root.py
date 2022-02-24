@@ -92,10 +92,17 @@ os.system("echo 'gvm ALL = NOPASSWD: /opt/gvm/sbin/openvas' > /etc/sudoers.d/gvm
 os.system("echo 'gvm ALL = NOPASSWD: /opt/gvm/sbin/gsad' >> /etc/sudoers.d/gvm")
 
 
-#make log 
+#make log
+os.system("mkdir /opt/gvm/var/log")
+os.system("mkdir /opt/gvm/var/log/gvm")
 os.system("touch /opt/gvm/var/log/gvm/gsad.log")
 
 #start services
-os.system("systemctl enable gvmd.service; systemctl enable ospd-openvas.service; systemctl enable gsad.service; systemctl start gsad.service; systemctl start gvmd.service; systemctl start gsad.service")
+os.system("systemctl enable gvmd.service")
+os.system("systemctl enable ospd-openvas.service")
+os.system("systemctl enable gsad.service")
+os.system("systemctl start gsad.service")
+os.system("systemctl start gvmd.service")
+os.system("systemctl start gsad.service")
 
 # ps aux | grep -E "ospd-openvas|gsad|gvmd" | grep -v grep
