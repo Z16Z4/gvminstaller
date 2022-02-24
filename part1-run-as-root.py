@@ -4,8 +4,8 @@
 # RUN AS SUDO SU
 
 import os 
-os.system("sudo apt-get update;sudo apt-get upgrade; sudo apt update; sudo apt upgrade")
-os.system("sudo apt install unzip")
+os.system("sudo apt-get update;sudo apt-get upgrade -y; sudo apt update; sudo apt upgrade -y")
+os.system("sudo apt install unzip -y")
 #Update system
 os.system("sudo curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -")
 os.system('''echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list''')
