@@ -32,11 +32,12 @@ os.system("mv openvas-scanner/ openvas")
 os.chdir("openvas")
 os.system("mkdir build")
 os.chdir("build")
+
 os.system("cmake .. -DCMAKE_INSTALL_PREFIX=/opt/gvm -DCMAKE_BUILD_TYPE=RELEASE")
 os.system("make")
 os.system("make doc")
 os.system("make install")
-
+os.system(''' sed -i 's/set (CMAKE_C_FLAGS_DEBUG\s.*\"\${CMAKE_C_FLAGS_DEBUG}\${COVERAGE_FLAGS} -Werror -Wno-error=deprecated-declarations\")/g' ../../openvas/CMakeLists.txt''')
 #MAKE GVMD
 os.chdir("/tmp/gvm-source/gvmd")
 os.system("mkdir build")
